@@ -1,12 +1,15 @@
 import React, { Component } from  "react";
 import './App.css';
+import Imager from "./Components/Imager";
 
 export class App extends Component {
   render() {
     return(
       <div>
-        <hi1>Hello World</hi1>
+        <h1>Hello World</h1>
+        <Imager />
       </div>
+      
     )
   }
 }
