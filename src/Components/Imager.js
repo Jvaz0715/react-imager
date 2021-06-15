@@ -23,19 +23,29 @@ export class Imager extends Component {
 
     render() {
         return (
-            <div style={{display: "flex", flexDirection: "column"}}>
-                <Thumbnail imagePath={this.state.imagePaths[0]}/>
-                <Thumbnail imagePath={this.state.imagePaths[1]}/>
-                <Thumbnail imagePath={this.state.imagePaths[2]}/>
-                <Thumbnail imagePath={this.state.imagePaths[3]}/>
-                <Thumbnail imagePath={this.state.imagePaths[4]}/>
-                <Thumbnail imagePath={this.state.imagePaths[5]}/>
-                <Thumbnail imagePath={this.state.imagePaths[6]}/>
-                <Thumbnail imagePath={this.state.imagePaths[7]}/>
-                <Thumbnail imagePath={this.state.imagePaths[8]}/>
-                <Thumbnail imagePath={this.state.imagePaths[9]}/>
-                <Thumbnail imagePath={this.state.imagePaths[10]}/>
-                <Thumbnail imagePath={this.state.imagePaths[11]}/>
+            <div style={{display: "flex", justifyContent: "center"}}>
+                <div style={{
+                    width: "700px",
+                    height: "700px",
+                    display: "grid",
+                    gridTemplateColumns: "repeat(4, 1fr)",
+                    gridTemplateRows: "repeat(3, 1fr)",
+                    gridGap: "15px",
+                    }}>
+                    <Thumbnail imagePath={this.state.imagePaths[0]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[1]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[2]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[3]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[4]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[5]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[6]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[7]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[8]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[9]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[10]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[11]}/>
+                </div>
+                
             </div>
         );
     }
