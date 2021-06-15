@@ -4,23 +4,62 @@ import Display from "../Display";
 import "./Imager.css"
 
 export class Imager extends Component {
+    constructor(props) {
+        super(props);
 
-    state = {
-        imagePaths: [
-            "images/image1.jpg",
-            "images/image2.jpg",
-            "images/image3.jpg",
-            "images/image4.jpg",
-            "images/image5.jpg",
-            "images/image6.jpg",
-            "images/image7.jpg",
-            "images/image8.jpg",
-            "images/image9.jpg",
-            "images/image10.jpg",
-            "images/image11.jpg",
-            "images/image12.jpg"
+        this.state = {
+            imagePaths: [
+                "images/image1.jpg",
+                "images/image2.jpg",
+                "images/image3.jpg",
+                "images/image4.jpg",
+                "images/image5.jpg",
+                "images/image6.jpg",
+                "images/image7.jpg",
+                "images/image8.jpg",
+                "images/image9.jpg",
+                "images/image10.jpg",
+                "images/image11.jpg",
+                "images/image12.jpg"
+            ],
+            displayImage: "images/image1.jpg",
+        }
+    }
 
-        ]
+    handleRandomImage =() => {
+        
+        let randomImageNumber = Math.floor(Math.random() * this.state.imagePaths.length);
+        this.setState({
+            displayImage: this.state.imagePaths[randomImageNumber]
+        })
+    };
+
+    handlePreviousImage = () => {
+        let currentImgIndex = this.state.imagePaths.indexOf(this.state.displayImage)
+        
+        if(currentImgIndex === 0) {
+            this.setState({
+                displayImage: this.state.imagePaths[this.state.imagePaths.length -1]
+            })
+        } else {
+            this.setState({
+                displayImage: this.state.imagePaths[currentImgIndex - 1]
+            })
+        }
+    }
+
+    handleNextImage = () => {
+        let currentImgIndex = this.state.imagePaths.indexOf(this.state.displayImage)
+        
+        if(currentImgIndex === this.state.imagePaths.length -1) {
+            this.setState({
+                displayImage: this.state.imagePaths[0]
+            })
+        } else {
+            this.setState({
+                displayImage: this.state.imagePaths[currentImgIndex + 1]
+            })
+        }
     }
 
     render() {
@@ -34,16 +73,16 @@ export class Imager extends Component {
 
                 {/* display div */}
                 <div className="display-div">
-                    <Display imagePath={this.state.imagePaths[0]}/>
+                    <Display imagePath={this.state.displayImage}/>
                 </div>
 
 
                 {/* buttons div */}
                 <div className="buttons-div">
-                    <button>Random</button>
+                    <button onClick={this.handleRandomImage}>Random</button>
                     <div>
-                        <button> {'<'} </button>
-                        <button> {'>'} </button>
+                        <button onClick={this.handlePreviousImage}> {'<'} </button>
+                        <button onClick={this.handleNextImage}> {'>'} </button>
                     </div>
                 </div>
 
