@@ -4,7 +4,7 @@ export class Display extends Component {
     render() {
         return (
             <img src={this.props.imagePath} alt="display" style={{
-                border: "3px solid black",
+                border: "3px solid white",
                 width: "100%",
                 height: "100%",
             }}/>

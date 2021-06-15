@@ -29,12 +29,15 @@ export class Imager extends Component {
     handleRandomImage =() => {
         
         let randomImageNumber = Math.floor(Math.random() * this.state.imagePaths.length);
+        
         this.setState({
             displayImage: this.state.imagePaths[randomImageNumber]
         })
+
     };
 
     handlePreviousImage = () => {
+        
         let currentImgIndex = this.state.imagePaths.indexOf(this.state.displayImage)
         
         if(currentImgIndex === 0) {
@@ -46,7 +49,7 @@ export class Imager extends Component {
                 displayImage: this.state.imagePaths[currentImgIndex - 1]
             })
         }
-    }
+    };
 
     handleNextImage = () => {
         let currentImgIndex = this.state.imagePaths.indexOf(this.state.displayImage)
@@ -60,7 +63,8 @@ export class Imager extends Component {
                 displayImage: this.state.imagePaths[currentImgIndex + 1]
             })
         }
-    }
+    };
+
 
     render() {
         return (
@@ -87,19 +91,20 @@ export class Imager extends Component {
                 </div>
 
                 {/* image thumbnails div */}
+                {/* can the below be done with a loop? */}
                 <div className="thumbnails-div">
-                    <Thumbnail imagePath={this.state.imagePaths[0]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[1]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[2]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[3]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[4]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[5]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[6]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[7]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[8]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[9]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[10]}/>
-                    <Thumbnail imagePath={this.state.imagePaths[11]}/>
+                    <Thumbnail imagePath={this.state.imagePaths[0]}  />
+                    <Thumbnail imagePath={this.state.imagePaths[1]} />
+                    <Thumbnail imagePath={this.state.imagePaths[2]} />
+                    <Thumbnail imagePath={this.state.imagePaths[3]} />
+                    <Thumbnail imagePath={this.state.imagePaths[4]} />
+                    <Thumbnail imagePath={this.state.imagePaths[5]} />
+                    <Thumbnail imagePath={this.state.imagePaths[6]} />
+                    <Thumbnail imagePath={this.state.imagePaths[7]} />
+                    <Thumbnail imagePath={this.state.imagePaths[8]} />
+                    <Thumbnail imagePath={this.state.imagePaths[9]} />
+                    <Thumbnail imagePath={this.state.imagePaths[10]} />
+                    <Thumbnail imagePath={this.state.imagePaths[11]} />
                 </div>
                 
             </div>
