@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Thumbnail from "./Thumbnail";
+import Thumbnail from "../Thumbnail";
+import Display from "../Display";
+import "./Imager.css"
 
 export class Imager extends Component {
 
@@ -23,15 +25,30 @@ export class Imager extends Component {
 
     render() {
         return (
-            <div style={{display: "flex", justifyContent: "center"}}>
-                <div style={{
-                    width: "700px",
-                    height: "700px",
-                    display: "grid",
-                    gridTemplateColumns: "repeat(4, 1fr)",
-                    gridTemplateRows: "repeat(3, 1fr)",
-                    gridGap: "15px",
-                    }}>
+            <div className="body">
+                
+                {/* imager header */}
+                
+                <h1>Imager</h1>
+                
+
+                {/* display div */}
+                <div className="display-div">
+                    <Display imagePath={this.state.imagePaths[0]}/>
+                </div>
+
+
+                {/* buttons div */}
+                <div className="buttons-div">
+                    <button>Random</button>
+                    <div>
+                        <button> {'<'} </button>
+                        <button> {'>'} </button>
+                    </div>
+                </div>
+
+                {/* image thumbnails div */}
+                <div className="thumbnails-div">
                     <Thumbnail imagePath={this.state.imagePaths[0]}/>
                     <Thumbnail imagePath={this.state.imagePaths[1]}/>
                     <Thumbnail imagePath={this.state.imagePaths[2]}/>
